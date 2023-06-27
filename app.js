@@ -7,7 +7,7 @@ const image2 = document.querySelector("section img:nth-child(2)");
 const image3 = document.querySelector("section img:nth-child(3)");
 
 let clicks = 0;
-const maxClicksAllowed = 18;
+const maxClicksAllowed = 9;
 
 let allProducts = [];
 
@@ -30,7 +30,7 @@ function renderProducts() {
   let product2 = getRandomNumber();
   let product3 = getRandomNumber();
 
-  while (product1 === product2 === product3 || usedProducts.includes(product1) || usedProducts.includes(product2) || usedProducts.includes(product3)) {
+  while (product1 === product2 || product1 === product3 || product2 === product3 || usedProducts.includes(product1) || usedProducts.includes(product2) || usedProducts.includes(product3)) {
     product1 = getRandomNumber();
     product2 = getRandomNumber();
     product3 = getRandomNumber();
