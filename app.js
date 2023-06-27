@@ -53,7 +53,7 @@ function renderProducts() {
 
 function handleProductClick(event) {
   if (event.target === oduckContainer) {
-    alert("Please click a image");
+    alert("Continue");
   } else {
     clicks++;
     let clickedProduct = event.target.alt;
