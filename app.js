@@ -144,4 +144,27 @@ function renderChart() {
 
   const productChart = document.getElementById("chart");
   const myChart = new Chart(productChart, config);
+  setLocalStorage();
 }
+
+function setLocalStorage() {
+  localStorage.setItem("product", JSON.stringify(allProducts));
+}
+
+function checkLocalStorage() {
+  const localProduct = JSON.parse(localStorage.getItem("product"));
+  if (localProduct) {
+    allProducts = localProduct;
+  } else {
+    for (let i = 0; i < newProductRange.length; i++) {
+      new Product(
+        newProductRange[i],
+        `img/` + newProductRange[i] + `.jpg`
+      );
+    }
+  }
+}
+    
+
+checkLocalStorage();
+renderProducts()
